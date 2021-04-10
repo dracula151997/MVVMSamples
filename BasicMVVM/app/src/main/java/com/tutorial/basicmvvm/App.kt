@@ -14,4 +14,6 @@ class App : Application() {
 
     fun getDatabase(): AppDatabase = AppDatabase.getDatabase(this, appExecutors)
 
+    fun getDataRepository(): DataRepository = DataRepository.getInstance(getDatabase())
+
 }

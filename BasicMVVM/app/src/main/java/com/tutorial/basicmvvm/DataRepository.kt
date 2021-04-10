@@ -29,7 +29,7 @@ class DataRepository(private val database: AppDatabase) {
         }
     }
 
-    val products: LiveData<List<ProductEntity>> = observableProducts
+    fun getProducts(): LiveData<List<ProductEntity>> = observableProducts
 
     fun loadProducts(productId: Int): LiveData<ProductEntity> =
         database.productDao().getProduct(productId)
