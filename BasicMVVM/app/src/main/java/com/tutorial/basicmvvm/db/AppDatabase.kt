@@ -1,12 +1,14 @@
-package com.tutorial.basicmvvm
+package com.tutorial.basicmvvm.db
 
 import android.content.Context
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteDatabase
+import com.tutorial.basicmvvm.AppExecutors
 import com.tutorial.basicmvvm.db.converter.DateConverter
 import com.tutorial.basicmvvm.db.dao.CommentDao
 import com.tutorial.basicmvvm.db.dao.ProductDao
@@ -83,6 +85,8 @@ abstract class AppDatabase : RoomDatabase() {
     private fun setDatabaseCreated() {
         mIsDatabaseCreated.postValue(true)
     }
+
+    val isDatabaseCreated : LiveData<Boolean> = mIsDatabaseCreated
 
 
 }

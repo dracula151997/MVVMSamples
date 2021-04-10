@@ -1,4 +1,4 @@
-package com.tutorial.basicmvvm
+package com.tutorial.basicmvvm.db
 
 import com.tutorial.basicmvvm.db.entity.CommentEntity
 import com.tutorial.basicmvvm.db.entity.ProductEntity

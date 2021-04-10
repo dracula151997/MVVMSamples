@@ -19,6 +19,6 @@ interface ProductDao {
     fun getProduct(productId: Int): LiveData<ProductEntity>
 
     @Query("SELECT * FROM products JOIN productsFts ON (products.id = productsFts.rowId) WHERE productsFts MATCH :query")
-    fun search(query: String)
+    fun search(query: String): LiveData<List<ProductEntity>>
 
 }
